@@ -1,6 +1,6 @@
-﻿import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { X, CheckCircle, ExternalLink, ShieldCheck, AlertTriangle, Loader2, Copy, LogIn } from 'lucide-react';
+import { X, CheckCircle, ShieldCheck, AlertTriangle, Loader2, Copy, LogIn } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
 import { useAuth } from '../../context/AuthContext';
 import { useWallets, useQuote, useCheckout, useCart, useOrder } from '../../hooks/useMarketplace';
@@ -242,17 +242,6 @@ export function CheckoutModal() {
               )}
             </div>
 
-            {confirmedOrder.explorerUrl && (
-              <a
-                href={confirmedOrder.explorerUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full py-2.5 rounded-lg bg-[#271E17] hover:bg-[#35271C] text-[#E28D38] text-xs font-semibold border border-[#35271C] flex items-center justify-center gap-2 transition-colors"
-              >
-                <span>Ver no Explorador de Blocos</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            )}
 
             <button
               onClick={() => {
